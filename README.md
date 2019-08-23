@@ -13,7 +13,7 @@ npm install --save @stellar/anchor-transfer-utils
 ### Standalone
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/@stellar/anchor-transfer-utils@1.1.0/lib/index.js" />
+<script src="https://unpkg.com/@stellar/anchor-transfer-utils@1.1.0/lib/index.js" />
 ```
 
 ## Usage for Anchors
