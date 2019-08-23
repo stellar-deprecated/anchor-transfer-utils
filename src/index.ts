@@ -11,10 +11,10 @@ export interface IWithdrawalTransaction {
 }
 
 export const finalizeWithdrawal = (transaction: IWithdrawalTransaction) => {
-  const message = {
+  const transactionDetails = {
     ...transaction,
     status: "pending_user_transfer_start"
   };
   const target = window.opener || window.parent;
-  target.postMessage(message, "*");
+  target.postMessage({ transaction: transactionDetails }, "*");
 };
