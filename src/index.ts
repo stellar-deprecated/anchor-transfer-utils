@@ -1,16 +1,16 @@
-export type WithdrawalTransaction = {
-  id: String;
-  amount_in: String;
-  withdraw_anchor_account: String;
-  withdraw_memo: String;
+export interface IWithdrawalTransaction {
+  id: string;
+  amount_in: string;
+  withdraw_anchor_account: string;
+  withdraw_memo: string;
   withdraw_memo_type: "text" | "id" | "hash" | "none";
 
-  more_info_url?: String;
-  amount_out?: String;
-  amount_fee?: String;
-};
+  more_info_url?: string;
+  amount_out?: string;
+  amount_fee?: string;
+}
 
-export const finalizeWithdrawal = (transaction: WithdrawalTransaction) => {
+export const finalizeWithdrawal = (transaction: IWithdrawalTransaction) => {
   const message = {
     ...transaction,
     status: "pending_user_transfer_start"
