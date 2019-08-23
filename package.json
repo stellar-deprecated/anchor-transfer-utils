@@ -1,17 +1,25 @@
 {
-  "name": "transfer-utils",
+  "name": "@stellar/transfer-utils",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Utilities for anchors and wallets implementing SEP6 transfer protocol",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "devDependencies": {
     "prettier": "^1.18.2",
     "tslint": "^5.19.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.5.3"
-  }
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
