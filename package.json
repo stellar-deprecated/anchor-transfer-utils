@@ -1,5 +1,5 @@
 {
-  "name": "@stellar/interactive-transfer-utils",
+  "name": "@stellar/anchor-transfer-utils",
   "version": "1.0.0",
   "description": "Utilities for anchors and wallets implementing SEP6 transfer protocol",
   "main": "lib/index.js",
