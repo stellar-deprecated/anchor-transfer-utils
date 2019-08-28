@@ -10,10 +10,28 @@ export interface IWithdrawalTransaction {
   amount_fee?: string;
 }
 
+export interface IDepositTransaction {
+  id: string;
+  amount_in: string;
+
+  more_info_url?: string;
+  amount_out?: string;
+  amount_fee?: string;
+}
+
 export const finalizeWithdrawal = (transaction: IWithdrawalTransaction) => {
   const transactionDetails = {
     ...transaction,
     status: "pending_user_transfer_start"
+  };
+  const target = window.opener || window.parent;
+  target.postMessage({ transaction: transactionDetails }, "*");
+};
+
+export const finalizeDeposit = (transaction: IDepositTransaction) => {
+  const transactionDetails = {
+    ...transaction,
+    status: "complete"
   };
   const target = window.opener || window.parent;
   target.postMessage({ transaction: transactionDetails }, "*");
