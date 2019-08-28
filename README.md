@@ -13,7 +13,7 @@ npm install --save @stellar/anchor-transfer-utils
 ### Standalone
 
 ```
-<script src="https://unpkg.com/@stellar/anchor-transfer-utils@1.1.0/lib/index.js" />
+<script src="https://unpkg.com/@stellar/anchor-transfer-utils@1.2.0/lib/index.js" />
 ```
 
 ## Usage for Anchors
@@ -25,6 +25,22 @@ For anchors using the interactive web flow, use the `finalizeTransaction` helper
 ```
 const AnchorTransferUtils = require("@stellar/anchor-transfer-utils")
 AnchorTransferUtils.finalizeWithdrawal({
+  id: "id_representing_anchor_transaction",
+  amount_in: "80.12",
+  withdraw_anchour_account: "<Stellar public account id>",
+  withdraw_memo: "<Some unique identifier>",
+  withdraw_memo_type: "text" | "hash" | "id"
+})
+```
+
+### Deposit
+
+For anchors using the interactive web flow, use the `finalizeDeposit` helper to communicate back to the wallet when a deposit is completed.
+
+```
+const AnchorTransferUtils = require("@stellar/anchor-transfer-utils")
+AnchorTransferUtils.finalizeWithdrawal({
+  id: "id_representing_anchor_transaction",
   amount_in: "80.12",
   withdraw_anchour_account: "<Stellar public account id>",
   withdraw_memo: "<Some unique identifier>",
