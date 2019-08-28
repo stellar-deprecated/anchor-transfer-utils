@@ -33,17 +33,3 @@ AnchorTransferUtils.finalizeWithdrawal({
 })
 ```
 
-### Deposit
-
-For anchors using the interactive web flow, use the `finalizeDeposit` helper to communicate back to the wallet when a deposit is completed.
-
-```
-const AnchorTransferUtils = require("@stellar/anchor-transfer-utils")
-AnchorTransferUtils.finalizeWithdrawal({
-  id: "id_representing_anchor_transaction",
-  amount_in: "80.12",
-  withdraw_anchour_account: "<Stellar public account id>",
-  withdraw_memo: "<Some unique identifier>",
-  withdraw_memo_type: "text" | "hash" | "id"
-})
-```
